@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFFBE9;
+}
+
+.back {
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.back a {
+  margin-top: 2rem;
+  color: black;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+button {
+  display: flex;
+  flex-direction: column;
+  height: 3rem;
+  background-color: #AD8B73;
+  border-color: #CEAB93;
+  margin-left: 1.5rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  width: 80%; /* Adjusted width for smaller screens */
+  max-width: 300px; /* Maximum width for button */
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.logobar {
+  margin-left: auto; /* Move logo to the right */
+  margin-right: 1.5rem; /* Add margin to separate from the edge */
+}
+
+.logobar img {
+  margin-top: 2px;
+  width: 75px; /* Larger width for logo */
+  height: 75px; /* Larger height for logo */
+  border-radius: 50%;
+}
+
+.bar {
+  background-color: #E3CAA5;
+  display: flex;
+  height: 85px;
+  align-items: center; /* Center items vertically */
+}
+
+a {
+  text-decoration: none;
+  color: #f0f8ff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
+
+button:hover {
+  background-color: #007bff;
+}
+
+button:hover a {
+  color: #007bff;
+}
+
+@media screen and (max-width: 600px) {
+  .logobar {
+      margin-top: 10px; /* Adjusted margin for smaller screens */
+      margin-left: 30vh; /* Adjusted margin for smaller screens */
+  }
+
+  .back a {
+      font-size: 14px; /* Adjusted font size for smaller screens */
+  }
+
+  a {
+      font-size: 14px; /* Adjusted font size for smaller screens */
+      margin-bottom: 10px; /* Adjusted margin for smaller screens */
+  }
+
+  button {
+      width: 90%; /* Adjusted width for smaller screens */
+  }
+}

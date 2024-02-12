@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fishbowl</title>
+  <link rel="stylesheet" href="fishbowl.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: "Lato", sans-serif;
+        background-color: #FFFBE9;
+      }
+      
+      .navbar {
+        background-color: #E3CAA5;
+        display: flex;
+        height: 85px;
+      }
+      
+      .navicon {
+        margin-top: 30px;
+        font-size: 30px;
+      }
+      
+      input[type=text] {
+        width: 35vh; /* Full width on small screens */
+        height: 40px; /* Adjust height for better mobile experience */
+        padding: 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #b1c9ed;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 10px;
+      }
+      
+      .button1,
+      .button2 {
+        width: 100vh;
+        max-width: 300px; /* Set a maximum width for better readability */
+        background-color: #AD8B73; /* Blue color */
+        color: #fff; /* White text */
+        border: none;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 10px 0;
+        cursor: pointer;
+        font-size: 18px;
+        transition: background-color 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+      }
+      
+      .button1:hover,
+      .button2:hover {
+        background-color: #E3CAA5; /* Darker blue on hover */
+      }
+      
+      .fishbowl {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+      
+      .bowl {
+        width: 100%; /* Full width on small screens */
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .fish img {
+        width: 10vh;
+        position: absolute;
+        bottom: 0;
+        top: 50%;
+        animation: swim 5s infinite linear;
+      }
+      
+      /* Styles for the dialog */
+      dialog#pickedDialog {
+        width: 300px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        text-align: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        z-index: 1000; /* Ensure dialog is on top */
+      }
+      
+      dialog#pickedDialog p {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      
+      dialog#pickedDialog button {
+        padding: 10px 20px;
+        background-color: #3366ff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+      
+      .speech-bubble {
+        position: absolute;
+        bottom: 110%; /* Adjust as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        width: fit-content;
+        padding: 5px 10px;
+        background-color: #fff; /* Bubble background color */
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      
+      .speech-bubble::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        border: 10px solid transparent;
+        border-top-color: #fff; /* Match bubble background color */
+        transform: translateX(-50%);
+      }
+      
+      dialog#pickedDialog button:hover {
+        background-color: #2556b3;
+      }
+      
+      /* Additional styles for backdrop */
+      dialog[open]::backdrop {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+      
+      
+      @keyframes swim {
+        0% {
+            transform: translateX(130%);
+        }
+        50% {
+            transform: translateX(-90%);
+        }
+        100% {
+            transform: translateX(130%);
+        }
+      }
+      
+      @keyframes jump {
+        0% {
+            bottom: 0;
+        }
+        50% {
+            bottom: 100%;
+        }
+        100% {
+            bottom: 0;
+        }
+      }
+  </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navicon">
+            <a href="Home.php"><i class="material-icons">arrow_back</i></a>
+        </div>
+    </div>
+    
+    <div class="fishbowl">
+        <img src="fishbowl2.png" class="bowl">
+        <div class="fish">
+            <img src="fish.png" id="talk">
+            <p id="fishName"></p>
+        </div>
+        <div class="textbox">
+            <input type="text" id="nameInput" placeholder="Enter a name">
+        </div>
+        <div class="button">
+            <button class="button1" onclick="addName()">Add</button>
+            <button class="button2" onclick="startPicking()">Start</button>
+        </div>
+        <div class="speech-bubble">
+            <img src="talk.gif" id="fishname">
+        </div>
+    </div>
+    <dialog id="pickedDialog">
+        <p>The picked name is: <span id="pickedDialogContent"></span></p>
+        <button onclick="closeDialog()">Close</button>
+    </dialog>
+    <script src="fishbowl.js"></script>
+</body>
+</html>

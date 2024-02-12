@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <link rel="stylesheet" href="Schedule.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="back">
+          <a href="Home.php"><i class="material-icons">arrow_back</i></a>
+      </div>
+       <div class="logobar">
+        <img src="logo latest.jpg">
+      </div>
+    </div>
+   
+
+    <header class="centered-header"><h1>Schedule</h1></header>
+    <div class="wrapper">
+        </div>
+        <div class="grid">
+          <table id="editableTable">
+            <thead>
+              <th scope="col">Time</th>
+              <th scope="col">Monday</th>
+              <th scope="col">Tuesday</th>
+              <th scope="col">Wednesday</th>
+              <th scope="col">Thursday</th>
+              <th scope="col">Friday</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+              </tr>
+              <tr class="bg-yellow">
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+              </tr>
+              <tr class="bg-green">
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+              </tr>
+              <tr>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+              </tr>
+              <tr>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+              </tr>
+              <tr>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+              </tr>
+              <tr class="bg-green">
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+              </tr>
+              <tr>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+                <td data-cell></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <script>
+        function editable() {
+          var cells = document.querySelectorAll('#editableTable td[data-cell]');
+
+          cells.forEach(function (cell) {
+              cell.addEventListener('click', function () {
+                  var content = this.innerHTML.trim();
+
+                  // Check if the content is already an input field
+                  if (content.indexOf('input') === -1) {
+                      this.innerHTML = '<input type="text" value="' + content + '">';
+
+                      var inputField = this.querySelector('input');
+                      inputField.focus();
+
+                      // Save edited content on input blur or Enter key press
+                      inputField.addEventListener('blur', saveContent);
+                      inputField.addEventListener('keypress', function (event) {
+                          if (event.key === 'Enter') {
+                              saveContent();
+                          }
+                      });
+
+                      function saveContent() {
+                          cell.innerHTML = inputField.value;
+                      }
+                  }
+              });
+          });
+      }
+
+      editable();
+    </script>
+</body>
+</html>

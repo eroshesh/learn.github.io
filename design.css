@@ -1,0 +1,211 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #FFFBE9;
+  background-image: url(homebgril.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+span{
+    margin-left: 13px;  
+  }
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #CEAB93;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  display: block;
+  transition: 0.3s;
+}
+
+
+.sidenav a:hover {
+  color: #f8f8f8;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.bar{
+  background-color: #E3CAA5;
+  display: flex;
+  justify-content: space-between;
+  height: 85px;
+}
+
+.logobar a img{
+  display: flex;
+  width: 75px;
+  height: 75px;
+  border-top-left-radius: 150px;
+  border-bottom-left-radius: 150px;
+  border-top-right-radius: 150px;
+  border-bottom-right-radius: 150px;
+  margin-right: 8px;
+  margin-top: 5px;
+}
+
+.about{
+  text-align: center;
+  font-family: sans-serif;
+  }
+  
+  a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 5vh;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  }
+
+.bar span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navshow{
+  display: flex;
+}
+.barclick a{
+  margin-bottom: 20px;
+}
+.barslide{
+  height: 2vh;
+  display: flex;
+  flex-direction: column;
+}
+.barslide i{
+  font-size: 20px;
+  margin: 12px 8px 30px 8px;
+}
+.drop {
+position: relative;
+display: none;
+}
+
+.barslide .drop {
+display: none;
+position: absolute; 
+background-color: #cacaca;
+min-width: 160px;
+top: 14vh;
+left: 0;
+z-index: 1;
+border-radius: 10px;
+}
+
+.barslide:hover .fa-chevron-down { 
+  transform: rotate(180deg);
+}
+
+.barslide:hover .drop {
+display: block;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+
+
+}
+
+.row{
+  display: flex;
+  height: 88%;
+  align-items: center;
+  flex-direction: column;
+}
+.col{
+  flex-basis: 50%;
+}
+h1{
+  font-size: 40px;
+  text-align: center;
+  margin: auto;
+  font-family: 'Times New Roman', Times, serif;
+}
+p{
+  color: #000000;
+  font-size: 11px;
+  line-height: 15px;
+}
+.card{
+  width: 200px;
+  height: 230px;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 10px 15px;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.5s;
+}
+.card1{
+  background-image: url(information.jpg);
+}
+.card2{
+  background-image: url(features.jpg);
+}
+.card3{
+  background-image: url(chuchorial.jpg);
+}
+.card4{
+  background-image: url(anawnsment.jpg);
+}
+
+.card:hover{
+  transform: translateY(-10px);
+}
+h6{
+  color: #000000;
+
+}
+.card p{
+  font-size: 9px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+
+  h1{
+    font-size: 40px;
+  }
+
+  .row {
+    flex-direction: column; /* Updated for smaller screens */
+  }
+}

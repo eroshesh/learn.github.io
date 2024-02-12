@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat+Brush|Ubuntu:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #FFFBE9;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background-color: #E3CAA5;
+    display: flex;
+    justify-content: space-between; /* Center and add space between items */
+    align-items: center;
+    padding: 10px;
+}
+
+.back a {
+    color: black;
+    font-size: 24px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logobar img {
+    width: 75px;
+    height: 75px;
+    border-radius: 40px;
+}
+
+.centered-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4vh;
+    background-color: #FFFBE9;
+    color: #000;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto; 
+    margin-top: 20px;
+}
+
+th,
+td {
+    vertical-align: top;
+    padding: 0.75rem;
+    align-items: center;
+}
+
+td {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    border: 2px solid;
+    min-width: 10rem;
+
+    span {
+        background-color: pink;
+    }
+
+    &[data-cell] {
+        height: 2rem;
+    }
+}
+
+.grid {
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .grid {
+        display: block;
+        overflow-x: auto;
+    }
+}

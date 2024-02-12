@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Jumbled Word Game</title>
+        <link rel="stylesheet" href="jw.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="js/words.js" defer></script>
+        <script src="js/script.js" defer></script>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="back">
+                <a href="Home.php"><i class="material-icons">arrow_back</i></a>
+            </div>
+        </div>
+        <div class="container">
+            <h2>Jumbled Words</h2>
+            <div class="content">
+                <p class ="word"></p>
+                <div class="details">
+                    <p class="hint">Hint: <span></span></p>
+                    <p class="time">Time Left: <span><b>20</b></span></p>
+                </div>
+                <input  type="text" placeholder="Enter your answer">
+                <div class="buttons">
+                    <button class="refresh-word">Refresh</button>
+                    <button class="check-word">Submit</button>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

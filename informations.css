@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #CFECF7;
+}
+.navbar{
+    display: flex;
+    height: 85px;
+    background-color: #FFFFFF;
+}
+.logobar img{
+    width: 75px;
+    height: 75px;
+    margin-top: 5px;
+    margin-left: 187vh;
+    border-radius: 40px;
+}
+.back{
+    margin-top: 30px;
+}
+.back a {
+    color: black;
+    font-size: 24px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.firstparagraph{
+    margin-top: 15px;
+    margin-left: 10vh;
+    width: 190vh;
+    height: 60vh;
+    background-color: #FFFFFF;
+    box-shadow: rgba(114, 98, 108, 0.4) -5px 5px, rgba(114, 98, 108, 0.4) -10px 10px, rgba(114, 98, 108, 0.4) -15px 15px, rgba(114, 98, 108, 0.4) -20px 20px, rgba(114, 98, 108, 0.4) -25px 25px;
+}
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px 5px 5px 20px;
+}

@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Set flex-direction to column to stack .back and .navbar vertically */
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FFFBE9;
+}
+
+.back {
+    margin-top: 1vh;
+    margin-left: 5px;
+}
+
+.back a {
+    color: black;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #E3CAA5;
+    height: 85px;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.quiz {
+    margin-top: 20px; /* Adjust as needed */
+}
+
+#joinForm {
+    background-color: #CEAB93;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    margin: 2px;
+}
+
+/* Form title styles */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Label and input styles */
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    background-color: #AD8B73;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #E3CAA5;
+}
+
+/* Alert styles */
+.alert {
+    color: red;
+    margin-top: 10px;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="feedback.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </head>
+  <body>
+
+
+    <div class="navbar">
+      <div class="back">
+        <a href="Home.php"><i class="material-icons">arrow_back</i></a>
+      </div>
+
+      <div class="logobar">
+          <img src="logo latest.jpg">
+      </div>
+    </div>
+       
+   
+       
+    <div class="container">
+      <div class="post">
+        <div class="text">Thanks for rating us!</div>
+        <div class="edit">EDIT</div>
+      </div>
+      <div class="star-widget">
+        <input type="radio" name="rating" id="rate-5">
+        <label for="rate-5" class="fas fa-star"></label>
+        <input type="radio" name="rating" id="rate-4">
+        <label for="rate-4" class="fas fa-star"></label>
+        <input type="radio" name="rating" id="rate-3">
+        <label for="rate-3" class="fas fa-star"></label>
+        <input type="radio" name="rating" id="rate-2">
+        <label for="rate-2" class="fas fa-star"></label>
+        <input type="radio" name="rating" id="rate-1">
+        <label for="rate-1" class="fas fa-star"></label>
+        <form id="feedbackform" action="feedback.php" method="POST">
+          <header></header>
+          <div class="textarea">
+            <textarea name="feedback_text" id="feedback_text" cols="30" placeholder="Describe your experience"></textarea>
+          </div>
+          <div class="btn">
+            <button id="Post" type="submit">Post</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <script>
+      const btn = document.querySelector("button#Post");
+      const post = document.querySelector(".post");
+      const widget = document.querySelector(".star-widget");
+      const editBtn = document.querySelector(".edit");
+      const textarea = document.querySelector(".textarea textarea");
+      const feedbackForm = document.getElementById("feedbackform");
+  
+      btn.onclick = (e) => {
+        e.preventDefault();
+  
+        const formData = new FormData(feedbackForm);
+        const rating = document.querySelector('input[name="rating"]:checked');
+        const ratingValue = rating ? rating.id.split("-")[1] : null;
+  
+        formData.append("rating", ratingValue);
+  
+        fetch("feedback.php", {
+          method: "POST",
+          body: formData
+        })
+        .then(response => {
+          if (response.ok) {
+            return response.text();
+          }
+          throw new Error("Network response was not ok.");
+        })
+        .then(data => {
+          console.log(data);
+          widget.style.display = "none";
+          post.style.display = "block";
+          editBtn.onclick = () => {
+            widget.style.display = "block";
+            post.style.display = "none";
+          };
+        })
+        .catch(error => {
+          console.error("There has been a problem with your fetch operation:", error);
+        });
+  
+        return false;
+      };
+  
+      editBtn.onclick = () => {
+        post.style.display = "none";
+        widget.style.display = "block";
+        textarea.value = "";
+      };
+    </script>
+  
+  </body>
+  </html>
